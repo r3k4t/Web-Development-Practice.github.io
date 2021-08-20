@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>location</title>
+</head>
+<body>
+  <h1 id="empty"></h1>
+    <h1 id="empty2"></h1>
+    <button type="button"  onclick="myPosition()">Get location</button>
+    <script>
+    var h = document.getElementById("empty");
+    var h2= document.getElementById("empty2")
+
+    function myPosition()
+      {
+        if(navigator.geolocation)
+        {
+         navigator.geolocation.getCurrentPosition(showlocation);
+        }
+      }
+    function showlocation(position)
+     {
+     
+      h.innerHTML="Longitude:"+position.coords.longitude;
+      h2.innerHTML="Latitude:"+position.coords.latitude;
+      
+     }
+
+    </script>
+</body>
+</html>
